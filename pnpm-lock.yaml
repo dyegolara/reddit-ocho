@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@radix-ui/colors': ^1.0.0
-  '@stitches/react': ^1.2.8
   '@types/node': 20.3.3
   '@types/react': 18.2.14
   '@types/react-dom': 18.2.6
@@ -13,12 +12,10 @@ specifiers:
   prettier: 2.8.8
   react: 18.2.0
   react-dom: 18.2.0
-  stitches-normalize-css: ^1.2.0
   typescript: 5.1.6
 
 dependencies:
   '@radix-ui/colors': 1.0.0
-  '@stitches/react': 1.2.8_react@18.2.0
   '@types/node': 20.3.3
   '@types/react': 18.2.14
   '@types/react-dom': 18.2.6
@@ -27,7 +24,6 @@ dependencies:
   next: 13.4.8_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  stitches-normalize-css: 1.2.0
   typescript: 5.1.6
 
 devDependencies:
@@ -224,14 +220,6 @@ packages:
 
   /@rushstack/eslint-patch/1.3.2:
     resolution: {integrity: sha512-V+MvGwaHH03hYhY+k6Ef/xKd6RYlc4q8WBx+2ANmipHJcKuktNcI/NgEsJgdSUF6Lw32njT6OnrRsKYCdgHjYw==}
-    dev: false
-
-  /@stitches/react/1.2.8_react@18.2.0:
-    resolution: {integrity: sha512-9g9dWI4gsSVe8bNLlb+lMkBYsnIKCZTmvqvDG+Avnn69XfmHZKiaMrx7cgTaddq7aTPPmXiTsbFcUy0xgI4+wA==}
-    peerDependencies:
-      react: '>= 16.3.0'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@swc/helpers/0.5.1:
@@ -1951,10 +1939,6 @@ packages:
   /source-map-js/1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
-    dev: false
-
-  /stitches-normalize-css/1.2.0:
-    resolution: {integrity: sha512-X0AmvKQcK2gXSCwmYzMQSqXA+9Yz+Nl7UUjuQ/Dkx3c77B9KyzGUFYNIiZ4ZW1SGRInDA/vI1HTUQk3ezkXDpA==}
     dev: false
 
   /streamsearch/1.1.0:
