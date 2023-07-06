@@ -1,10 +1,11 @@
+"use client";
 import React, { useState } from "react";
 import Votes from "@/components/Votes";
 import LinkPreview from "@/components/LinkPreview";
 import MediaPreview from "@/components/MediaPreview";
 import { UP, DOWN } from "@/const";
 import styles from "./Post.module.css";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 type PostProps = {
   post: {

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styled.module.css";
+import styles from "./MediaPreview.module.css";
 
 interface MediaPreviewProps {
   url: string;
