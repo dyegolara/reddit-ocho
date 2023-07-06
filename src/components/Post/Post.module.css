@@ -21,7 +21,7 @@
 
 .postContent {
   width: 100%;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .subreddit {
@@ -37,4 +37,6 @@
 
 .title {
   color: var(--mauve-12);
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

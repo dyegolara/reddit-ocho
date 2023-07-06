@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap-reverse;
+  gap: 1rem;
 }
 
 .thumbnail {
@@ -13,4 +14,7 @@
 .link {
   color: var(--blue-11);
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75%;
 }
