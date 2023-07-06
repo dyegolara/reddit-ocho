@@ -3,6 +3,8 @@ import { Container } from "@/components/Container";
 import { getData } from "@/utils";
 import Post from "@/components/Post";
 
+export const revalidate = 0;
+
 const ALL_POSTS_URL = "https://www.reddit.com/r/all.json";
 
 export default async function Home() {
