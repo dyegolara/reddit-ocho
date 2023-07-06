@@ -82,7 +82,7 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
       <div className={styles.postContent}>
         <span className={styles.subreddit}>r/{subreddit}</span>
         <span className={styles.author}> · Posted by u/{author}</span>
-        <h4>{title}</h4>
+        <h4 className={styles.title}>{title}</h4>
         {hasMediaPreview && (
           <MediaPreview
             url={url}
