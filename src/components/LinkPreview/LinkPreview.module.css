@@ -18,3 +18,7 @@
   text-overflow: ellipsis;
   max-width: 75%;
 }
+
+.link:hover {
+  text-decoration: underline;
+}

@@ -27,7 +27,7 @@ const MediaPreview: React.FC<MediaPreviewProps> = ({
   }
 
   return (
-    <div className={styles.preview}>
+    <div className={styles.preview} onClick={(event) => event.preventDefault()}>
       {isVideo ? (
         <video className={styles.video} controls autoPlay loop>
           <source src={videoSource} />

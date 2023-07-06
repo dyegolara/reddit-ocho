@@ -9,7 +9,10 @@ interface LinkPreviewProps {
 
 const LinkPreview: React.FC<LinkPreviewProps> = ({ url, thumbnail }) => {
   return (
-    <div className={styles.linkPreview}>
+    <div
+      className={styles.linkPreview}
+      onClick={(event) => event.stopPropagation()}
+    >
       <Link
         href={url}
         target="_blank"

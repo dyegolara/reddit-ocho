@@ -6,6 +6,7 @@ import MediaPreview from "@/components/MediaPreview";
 import { UP, DOWN } from "@/const";
 import styles from "./Post.module.css";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type PostProps = {
   post: {
@@ -46,10 +47,6 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
   const isLink = postHint === "link";
   const hasMediaPreview = !isSelf && !isLink;
 
-  const handlePostClick = () => {
-    router.push(permalink);
-  };
-
   const handleVoteButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
@@ -67,33 +64,32 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
   if (voted === DOWN) updatedScore = score - 1;
 
   return (
-    <li
-      className={`${styles.post} ${clickable ? styles.clickable : ""}`}
-      onClick={clickable ? handlePostClick : undefined}
-    >
-      <div className={styles.postVotes}>
-        <Votes
-          score={updatedScore}
-          onVote={handleVoteButtonClick}
-          voted={voted}
-          showScore
-        />
-      </div>
-      <div className={styles.postContent}>
-        <span className={styles.subreddit}>r/{subreddit}</span>
-        <span className={styles.author}> · Posted by u/{author}</span>
-        <h4 className={styles.title}>{title}</h4>
-        {hasMediaPreview && (
-          <MediaPreview
-            url={url}
-            postHint={postHint}
-            isVideo={isVideo}
-            media={media}
-            preview={preview}
+    <li className={styles.post}>
+      <Link href={permalink} className={styles.link}>
+        <div className={styles.postVotes}>
+          <Votes
+            score={updatedScore}
+            onVote={handleVoteButtonClick}
+            voted={voted}
+            showScore
           />
-        )}
-        {isLink && <LinkPreview url={url} thumbnail={thumbnail} />}
-      </div>
+        </div>
+        <div className={styles.postContent}>
+          <span className={styles.subreddit}>r/{subreddit}</span>
+          <span className={styles.author}> · Posted by u/{author}</span>
+          <h4 className={styles.title}>{title}</h4>
+          {hasMediaPreview && (
+            <MediaPreview
+              url={url}
+              postHint={postHint}
+              isVideo={isVideo}
+              media={media}
+              preview={preview}
+            />
+          )}
+          {isLink && <LinkPreview url={url} thumbnail={thumbnail} />}
+        </div>
+      </Link>
     </li>
   );
 };
