@@ -19,10 +19,10 @@ const MediaPreview: React.FC<MediaPreviewProps> = ({
   let videoSource: string | undefined;
   if (isVideo) {
     if (postHint === "hosted:video") {
-      videoSource = media.reddit_video.fallback_url;
+      videoSource = media?.reddit_video?.fallback_url;
     }
     if (postHint === "rich:video") {
-      videoSource = preview.reddit_video_preview.fallback_url;
+      videoSource = preview?.reddit_video_preview?.fallback_url;
     }
   }
 

@@ -10,7 +10,12 @@ interface LinkPreviewProps {
 const LinkPreview: React.FC<LinkPreviewProps> = ({ url, thumbnail }) => {
   return (
     <div className={styles.linkPreview}>
-      <Link href={url} target="_blank" rel="noopener noreferrer">
+      <Link
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.link}
+      >
         {url}
       </Link>
       <img className={styles.thumbnail} src={thumbnail} alt="Thumbnail" />

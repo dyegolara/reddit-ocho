@@ -3,52 +3,56 @@
   font-weight: bold;
   display: flex;
   flex-direction: column;
+  border-radius: 0.5rem;
 }
 
 .voteButton {
   border: none;
   background-color: transparent;
   font-size: 0.75rem;
-  padding: 5px 0;
+  padding: 0.25rem 0;
   font-weight: bold;
+  color: var(--mauve-11);
+  border-radius: 0.25rem;
 }
 
 .voteButton:hover {
-  background-color: silver;
+  background-color: var(--mauve-8);
 }
 
 .upvote {
-  color: grey;
+  color: var(--mauve-11);
 }
 
 .upvote:hover {
-  color: firebrick;
+  color: var(--tomato-11);
 }
 
 .upvote.voted {
-  color: firebrick;
+  color: var(--tomato-9);
 }
 
 .downvote {
-  color: grey;
+  color: var(--mauve-11);
 }
 
 .downvote:hover {
-  color: royalblue;
+  color: var(--blue-11);
 }
 
 .downvote.voted {
-  color: royalblue;
+  color: var(--blue-9);
 }
 
 .score {
-  color: black;
+  color: var(--mauve-12);
+  margin: 0.5rem 0;
 }
 
 .score.up {
-  color: firebrick;
+  color: var(--tomato-9);
 }
 
 .score.down {
-  color: royalblue;
+  color: var(--blue-9);
 }
