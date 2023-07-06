@@ -1,0 +1,35 @@
+.post {
+  display: flex;
+  border: 1px gainsboro solid;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.post:hover {
+  border: 1px silver solid;
+}
+
+.postVotes {
+  background-color: gainsboro;
+}
+
+.postContent {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.subreddit {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.author {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: gray;
+}

@@ -1,0 +1,54 @@
+.votes {
+  padding: 0.5rem;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.voteButton {
+  border: none;
+  background-color: transparent;
+  font-size: 0.75rem;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+.voteButton:hover {
+  background-color: silver;
+}
+
+.upvote {
+  color: grey;
+}
+
+.upvote:hover {
+  color: firebrick;
+}
+
+.upvote.voted {
+  color: firebrick;
+}
+
+.downvote {
+  color: grey;
+}
+
+.downvote:hover {
+  color: royalblue;
+}
+
+.downvote.voted {
+  color: royalblue;
+}
+
+.score {
+  color: black;
+}
+
+.score.up {
+  color: firebrick;
+}
+
+.score.down {
+  color: royalblue;
+}
