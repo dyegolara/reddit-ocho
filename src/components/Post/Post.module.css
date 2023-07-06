@@ -17,10 +17,12 @@
 .postVotes {
   background-color: var(--mauve-2);
   border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .postContent {
-  width: 100%;
   padding: 1rem;
 }
 
@@ -44,7 +46,8 @@
 
 .link {
   text-decoration: none;
-  display: flex;
+  display: grid;
+  grid-template-columns: 4rem 1fr;
   height: 100%;
   width: 100%;
 }
