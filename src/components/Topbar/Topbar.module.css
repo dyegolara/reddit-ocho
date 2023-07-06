@@ -1,0 +1,36 @@
+.topbar {
+  max-height: 3rem;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px gainsboro solid;
+  background-color: white;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 3rem;
+}
+
+.link {
+  color: blue;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  .topbar {
+    background-color: black;
+    color: white;
+  }
+
+  .link {
+    color: cyan;
+  }
+}
