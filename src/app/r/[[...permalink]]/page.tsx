@@ -3,6 +3,8 @@ import Loading from "@/components/Loading";
 import { Container } from "@/components/Container";
 import Post from "@/components/Post";
 import { getData } from "@/utils";
+import AddComment from "@/components/AddComment";
+import CommentsList from "@/components/CommentsList";
 
 export default async function Detail({
   params: { permalink },
@@ -18,6 +20,8 @@ export default async function Detail({
     <div className={styles.detail}>
       <Container>
         <Post post={post.data} clickable={false} />
+        <AddComment />
+        <CommentsList comments={comments} />
       </Container>
       <Loading />
     </div>

@@ -1,0 +1,14 @@
+.addReplyButton {
+  border: none;
+  font-weight: bold;
+  color: gray;
+  background-color: white;
+  font-size: 0.75rem;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.addReplyButton:hover {
+  color: black;
+  text-decoration: underline;
+}
