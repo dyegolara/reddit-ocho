@@ -5,41 +5,45 @@
 .commentVotes {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  width: 3rem;
-  padding: 0.5rem 0;
-  border-right: 1px silver solid;
 }
 
 .threadlineWrapper {
-  flex-grow: 1;
-  width: 100%;
-  height: 1px;
-  background-color: silver;
-  margin-top: 0.5rem;
+  display: flex;
+  height: 100%;
+  padding: 0 5px;
+  width: 2px;
+  align-self: center;
+}
+
+.threadlineWrapper:hover .threadline {
+  background-color: royalblue;
 }
 
 .threadline {
-  width: 1px;
-  background-color: silver;
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: darkgray;
+  width: 2px;
+  align-self: center;
 }
 
 .commentContent {
-  padding: 0.5rem;
+  padding-top: 0.75rem;
   width: 100%;
 }
 
 .author {
-  font-weight: bold;
+  font-size: 0.75rem;
+  color: royalblue;
 }
 
 .points {
   font-size: 0.75rem;
-  color: grey;
+  color: gray;
 }
 
 .body {
-  padding: 0.5rem 0;
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
 }
