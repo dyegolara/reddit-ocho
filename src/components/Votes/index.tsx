@@ -10,7 +10,8 @@ type VotesProps = {
   showScore: boolean;
 };
 
-const getHumanReadableScore = (score: number, unit = 0): string => {
+const getHumanReadableScore = (score?: number, unit = 0): string => {
+  if (!score) return "0";
   if (score < 1000) return `${score}${HUMAN_READABLE_UNITS[unit]}`;
   const abbreviatedScore = Math.round((score / 1000) * 10) / 10;
   return getHumanReadableScore(abbreviatedScore, unit + 1);
