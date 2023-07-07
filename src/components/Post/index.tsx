@@ -7,6 +7,7 @@ import { UP, DOWN } from "@/const";
 import styles from "./Post.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import cn from "classnames";
 
 type PostProps = {
   post: {
@@ -64,8 +65,11 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
   if (voted === DOWN) updatedScore = score - 1;
 
   return (
-    <li className={styles.post}>
-      <Link href={permalink} className={styles.link}>
+    <li className={cn(styles.post, { [styles.clickablePost]: clickable })}>
+      <Link
+        href={clickable ? permalink : ""}
+        className={cn(styles.link, { [styles.notClickable]: !clickable })}
+      >
         <div className={styles.postVotes}>
           <Votes
             score={updatedScore}

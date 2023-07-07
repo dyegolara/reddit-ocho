@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 
-.post:hover {
+.clickablePost:hover {
   border: 1px var(--tomato-8) solid;
 }
 
@@ -54,4 +54,8 @@
 
 .link:hover {
   text-decoration: none;
+}
+
+.notClickable {
+  cursor: default;
 }
