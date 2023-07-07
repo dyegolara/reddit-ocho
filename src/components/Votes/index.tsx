@@ -2,6 +2,7 @@ import React from "react";
 import { DOWN, HUMAN_READABLE_UNITS, UP } from "@/const";
 import styles from "./Votes.module.css";
 import cn from "classnames";
+import { ArrowBigDown, ArrowBigUp } from "lucide-react";
 
 type VotesProps = {
   score: number;
@@ -27,7 +28,7 @@ const Votes: React.FC<VotesProps> = ({ score, voted, onVote, showScore }) => {
           [styles.voted]: voted === UP,
         })}
       >
-        up
+        <ArrowBigUp size={24} />
       </button>
       {showScore && (
         <span
@@ -46,7 +47,7 @@ const Votes: React.FC<VotesProps> = ({ score, voted, onVote, showScore }) => {
           [styles.voted]: voted === DOWN,
         })}
       >
-        down
+        <ArrowBigDown size={24} />
       </button>
     </div>
   );

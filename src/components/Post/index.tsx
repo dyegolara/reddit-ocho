@@ -53,8 +53,11 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
           />
         </div>
         <div className={styles.postContent}>
-          <span className={styles.subreddit}>r/{subreddit}</span>
-          <span className={styles.author}> · OP u/{author}</span>
+          <div className={styles.postMeta}>
+            <span className={styles.subreddit}>r/{subreddit}</span>
+            <span className={styles.dot}> · </span>
+            <span className={styles.author}>u/{author}</span>
+          </div>
           <h4 className={styles.title}>{title}</h4>
           {isSelf && <span className={styles.self}>{post.selftext}</span>}
           {isGallery && <Gallery images={post.gallery_data.items} />}

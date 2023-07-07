@@ -1,8 +1,16 @@
 .all {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .ul {
   list-style: none;
   padding: 0;
+}
+
+@media (min-width: 640px) {
+  .all {
+    padding: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
