@@ -49,6 +49,7 @@
   grid-template-columns: 4rem 1fr;
   height: 100%;
   width: 100%;
+  color: var(--mauve-12);
 }
 
 .link:hover {

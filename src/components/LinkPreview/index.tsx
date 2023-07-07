@@ -21,7 +21,9 @@ const LinkPreview: React.FC<LinkPreviewProps> = ({ url, thumbnail }) => {
       >
         {url}
       </Link>
-      <img className={styles.thumbnail} src={thumbnail} alt="Thumbnail" />
+      {!thumbnail || thumbnail === "default" ? null : (
+        <img className={styles.thumbnail} src={thumbnail} alt="Thumbnail" />
+      )}
     </div>
   );
 };

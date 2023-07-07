@@ -5,6 +5,7 @@ interface MediaPreviewProps {
   url: string;
   isVideo: boolean;
   postHint: string;
+  thumbnail: string;
   media: {
     reddit_video: {
       fallback_url: string;
@@ -23,6 +24,7 @@ const MediaPreview: React.FC<MediaPreviewProps> = ({
   postHint,
   media,
   preview,
+  thumbnail,
 }) => {
   let videoSource: string | undefined;
   if (isVideo) {

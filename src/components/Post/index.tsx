@@ -8,6 +8,7 @@ import Link from "next/link";
 import cn from "classnames";
 import { useVotes } from "@/components/Votes/useVotes";
 import { PostType } from "@/types";
+import Gallery from "@/components/Gallery";
 
 interface PostProps {
   post: PostType;
@@ -26,13 +27,16 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
     preview,
     permalink,
     is_video: saysIsVideo,
+    is_reddit_media_domain: isRedditMediaDomain,
+    is_gallery: isGallery,
     is_self: isSelf,
     post_hint: postHint,
   } = post;
   const { voted, handleVoteButtonClick, updatedScore } = useVotes(score);
   const isVideo = saysIsVideo || postHint?.includes("video");
+  const isImage = postHint === "image";
   const isLink = postHint === "link";
-  const hasMediaPreview = !isSelf && !isLink;
+  const hasMediaPreview = isRedditMediaDomain && !isSelf && !isLink;
 
   return (
     <li className={cn(styles.post, { [styles.clickablePost]: clickable })}>
@@ -52,16 +56,19 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
           <span className={styles.subreddit}>r/{subreddit}</span>
           <span className={styles.author}> · OP u/{author}</span>
           <h4 className={styles.title}>{title}</h4>
+          {isSelf && <span className={styles.self}>{post.selftext}</span>}
+          {isGallery && <Gallery images={post.gallery_data.items} />}
+          {isLink && <LinkPreview url={url} thumbnail={thumbnail} />}
           {hasMediaPreview && (
             <MediaPreview
-              url={url}
+              url={isImage ? url : thumbnail}
               postHint={postHint}
               isVideo={isVideo}
               media={media}
               preview={preview}
+              thumbnail={thumbnail}
             />
           )}
-          {isLink && <LinkPreview url={url} thumbnail={thumbnail} />}
         </div>
       </Link>
     </li>
