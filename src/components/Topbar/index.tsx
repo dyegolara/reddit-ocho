@@ -1,8 +1,11 @@
+"use client";
 import Link from "next/link";
 import styles from "./Topbar.module.css";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const Topbar = () => {
+  const pathname = usePathname();
+
   return (
     <header className={styles.topbar}>
       <nav className={styles.nav}>
@@ -13,9 +16,11 @@ const Topbar = () => {
             className={styles.logo}
           />
         </Link>
-        <Link href="/" className={styles.link}>
-          /all
-        </Link>
+        {pathname !== "/" && (
+          <Link href="/" className={styles.link}>
+            back to /all
+          </Link>
+        )}
       </nav>
     </header>
   );
