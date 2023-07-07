@@ -10,9 +10,10 @@
 .threadlineWrapper {
   display: flex;
   height: 100%;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   width: 2px;
   align-self: center;
+  cursor: pointer;
 }
 
 .threadlineWrapper:hover .threadline {
@@ -53,4 +54,8 @@
   align-items: center;
   margin-bottom: 1rem;
   flex-wrap: wrap;
+}
+
+.compact {
+  display: none;
 }
