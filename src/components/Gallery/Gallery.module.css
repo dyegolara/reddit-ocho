@@ -32,7 +32,7 @@
   border-color: var(--mauve-9);
 }
 
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .img {
     max-width: 100%;
   }
