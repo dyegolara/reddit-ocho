@@ -10,20 +10,20 @@
 .threadlineWrapper {
   display: flex;
   height: 100%;
-  padding: 0 5px;
+  padding: 0 0.25rem;
   width: 2px;
   align-self: center;
 }
 
 .threadlineWrapper:hover .threadline {
-  background-color: royalblue;
+  background-color: var(--indigo-9);
 }
 
 .threadline {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: darkgray;
+  background-color: var(--mauve-7);
   width: 2px;
   align-self: center;
 }
@@ -35,12 +35,12 @@
 
 .author {
   font-size: 0.75rem;
-  color: royalblue;
+  color: var(--indigo-11);
 }
 
 .points {
   font-size: 0.75rem;
-  color: gray;
+  color: var(--mauve-11);
 }
 
 .body {

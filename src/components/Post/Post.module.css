@@ -29,13 +29,12 @@
 .subreddit {
   font-size: 0.75rem;
   font-weight: bold;
-  color: var(--tomato-11);
+  color: var(--mauve-11);
 }
 
 .author {
   font-size: 0.75rem;
-  font-weight: bold;
-  color: var(--mauve-11);
+  color: var(--indigo-11);
 }
 
 .title {

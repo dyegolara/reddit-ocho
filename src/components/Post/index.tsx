@@ -51,7 +51,7 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
   const handleVoteButtonClick = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
-    event.stopPropagation();
+    event.preventDefault();
     const { name } = event.currentTarget;
     if (voted === name) {
       setVoted("");
@@ -80,7 +80,7 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
         </div>
         <div className={styles.postContent}>
           <span className={styles.subreddit}>r/{subreddit}</span>
-          <span className={styles.author}> · Posted by u/{author}</span>
+          <span className={styles.author}> · OP u/{author}</span>
           <h4 className={styles.title}>{title}</h4>
           {hasMediaPreview && (
             <MediaPreview

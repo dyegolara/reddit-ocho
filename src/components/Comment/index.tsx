@@ -61,7 +61,7 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
         </div>
       </div>
       <div className={styles.commentContent}>
-        <span className={styles.author}>{author}</span>
+        <span className={styles.author}>u/{author}</span>
         <span className={styles.points}> · {updatedScore} points</span>
         <p className={styles.body}>{body}</p>
         <AddReply setReplies={setReplies} />

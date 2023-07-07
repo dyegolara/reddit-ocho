@@ -1,14 +1,14 @@
 .addReplyButton {
   border: none;
   font-weight: bold;
-  color: gray;
-  background-color: white;
+  color: var(--mauve-11);
+  background-color: transparent;
   font-size: 0.75rem;
   padding: 0;
   margin-bottom: 1rem;
 }
 
 .addReplyButton:hover {
-  color: black;
+  color: var(--tomato-12);
   text-decoration: underline;
 }
