@@ -12,6 +12,12 @@
   align-items: center;
 }
 
+.rightSide {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .logo {
   width: 3rem;
 }
@@ -24,4 +30,17 @@
 
 .link:hover {
   text-decoration: underline;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  padding: 0.25rem;
+  font-weight: bold;
+  color: var(--mauve-12);
+  border-radius: 0.25rem;
+}
+
+.button:hover {
+  background-color: var(--mauve-8);
 }

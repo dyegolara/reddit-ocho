@@ -9,6 +9,8 @@ const ThemeContext = React.createContext({
   setColorMode: React.Dispatch<React.SetStateAction<ColorMode>>,
 });
 
+export const useTheme = () => React.useContext(ThemeContext);
+
 export default function ColorModeProvider({
   children,
   autoDetect = true,
@@ -16,7 +18,12 @@ export default function ColorModeProvider({
   children: React.ReactNode;
   autoDetect?: boolean;
 }) {
-  const { colorMode, setColorMode, systemColorMode } = useColorMode();
+  const systemColorMode = useColorMode();
+  const [colorMode, setColorMode] = useState<ColorMode>(systemColorMode);
+
+  useEffect(() => {
+    if (autoDetect) setColorMode(systemColorMode);
+  }, [systemColorMode, autoDetect]);
 
   return (
     <body className={`${colorMode}-theme`}>

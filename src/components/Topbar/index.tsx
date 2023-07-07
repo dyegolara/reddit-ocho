@@ -2,9 +2,13 @@
 import Link from "next/link";
 import styles from "./Topbar.module.css";
 import { usePathname } from "next/navigation";
+import useColorMode, { ColorMode, DARK, LIGHT } from "@/app/useColorMode";
+import { useTheme } from "@/app/ColorModeProvider";
+import { Sun, Moon } from "lucide-react";
 
 const Topbar = () => {
   const pathname = usePathname();
+  const { colorMode, setColorMode } = useTheme();
 
   return (
     <header className={styles.topbar}>
@@ -16,11 +20,22 @@ const Topbar = () => {
             className={styles.logo}
           />
         </Link>
-        {pathname !== "/" && (
-          <Link href="/" className={styles.link}>
-            back to /all
-          </Link>
-        )}
+
+        <div className={styles.rightSide}>
+          {pathname !== "/" && (
+            <Link href="/" className={styles.link}>
+              back to /all
+            </Link>
+          )}
+          <button
+            className={styles.button}
+            onClick={() =>
+              setColorMode((mode: ColorMode) => (mode === LIGHT ? DARK : LIGHT))
+            }
+          >
+            {colorMode === LIGHT ? <Moon size={24} /> : <Sun size={24} />}
+          </button>
+        </div>
       </nav>
     </header>
   );

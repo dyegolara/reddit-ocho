@@ -5,15 +5,7 @@ export const DARK = "dark";
 
 export type ColorMode = typeof LIGHT | typeof DARK;
 
-const useColorMode = ({
-  autoDetect = true,
-}: {
-  autoDetect?: boolean;
-} = {}): {
-  colorMode: ColorMode;
-  setColorMode: (colorMode: ColorMode) => void;
-  systemColorMode: ColorMode;
-} => {
+const useColorMode = (): ColorMode => {
   const [systemColorMode, setSystemColorMode] = useState<ColorMode>(LIGHT);
 
   useEffect(() => {
@@ -28,17 +20,7 @@ const useColorMode = ({
     return () => mediaQuery.removeEventListener("change", changeHandler);
   }, []); // Empty array ensures effect is only run on mount and unmount
 
-  const [colorMode, setColorMode] = useState<ColorMode>(systemColorMode);
-
-  useEffect(() => {
-    if (autoDetect) setColorMode(systemColorMode);
-  }, [systemColorMode, autoDetect]);
-
-  return {
-    colorMode,
-    setColorMode,
-    systemColorMode,
-  };
+  return systemColorMode;
 };
 
 export default useColorMode;
