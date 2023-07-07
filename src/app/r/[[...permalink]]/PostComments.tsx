@@ -21,7 +21,7 @@ export default function PostComments({
         body: comment,
         replies: { data: { children: [] } },
       },
-    };
+    } as unknown as { data: CommentType };
     setCommentsState((prevComments) => [newComment, ...prevComments]);
   }, []);
 
