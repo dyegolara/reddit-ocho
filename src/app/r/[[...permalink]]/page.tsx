@@ -1,5 +1,4 @@
 import styles from "./page.module.css";
-import Loading from "@/components/Loading";
 import { Container } from "@/components/Container";
 import Post from "@/components/Post";
 import { getData } from "@/utils";
@@ -25,7 +24,6 @@ export default async function Detail({
         <Post post={post.data} clickable={false} />
         <PostComments comments={comments} />
       </Container>
-      <Loading />
     </div>
   );
 }
