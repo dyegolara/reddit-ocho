@@ -20,9 +20,9 @@ const LinkPreview: React.FC<LinkPreviewProps> = ({ url, thumbnail }) => {
         rel="noopener noreferrer"
         className={styles.link}
       >
-        {url}
-        &nbsp;
         <ExternalLink size={16} />
+        &nbsp;
+        {url}
       </Link>
       {!thumbnail || thumbnail === "default" ? null : (
         <img className={styles.thumbnail} src={thumbnail} alt="Thumbnail" />
