@@ -49,7 +49,6 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
             score={updatedScore}
             onVote={handleVoteButtonClick}
             voted={voted}
-            showScore
           />
         </div>
         <div className={styles.postContent}>

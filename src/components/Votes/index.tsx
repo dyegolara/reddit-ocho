@@ -8,7 +8,7 @@ type VotesProps = {
   score: number;
   voted: string;
   onVote: (event: React.MouseEvent<HTMLButtonElement>) => void;
-  showScore: boolean;
+  horizontal?: boolean;
 };
 
 const getHumanReadableScore = (score?: number, unit = 0): string => {
@@ -18,9 +18,9 @@ const getHumanReadableScore = (score?: number, unit = 0): string => {
   return getHumanReadableScore(abbreviatedScore, unit + 1);
 };
 
-const Votes: React.FC<VotesProps> = ({ score, voted, onVote, showScore }) => {
+const Votes: React.FC<VotesProps> = ({ score, voted, onVote, horizontal }) => {
   return (
-    <div className={styles.votes}>
+    <div className={cn(styles.votes, { [styles.horizontal]: horizontal })}>
       <button
         name={UP}
         onClick={onVote}
@@ -30,16 +30,17 @@ const Votes: React.FC<VotesProps> = ({ score, voted, onVote, showScore }) => {
       >
         <ArrowBigUp size={24} />
       </button>
-      {showScore && (
-        <span
-          className={cn(styles.score, {
-            [styles.up]: voted === UP,
-            [styles.down]: voted === DOWN,
-          })}
-        >
-          {getHumanReadableScore(score)}
-        </span>
-      )}
+
+      <span
+        className={cn(styles.score, {
+          [styles.up]: voted === UP,
+          [styles.down]: voted === DOWN,
+          [styles.smallScore]: horizontal,
+        })}
+      >
+        {getHumanReadableScore(score)}
+      </span>
+
       <button
         name={DOWN}
         onClick={onVote}

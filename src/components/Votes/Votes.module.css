@@ -5,7 +5,7 @@
   font-weight: bold;
   display: flex;
   border-radius: 0.5rem;
-  gap: 0.5rem;
+  gap: 0.25rem;
   align-items: center;
 }
 
@@ -75,5 +75,14 @@
 
   .score {
     font-size: 1rem;
+  }
+
+  .smallScore {
+    font-size: 0.75rem;
+  }
+
+  .horizontal {
+    flex-direction: row;
+    padding: 0 0.25rem;
   }
 }

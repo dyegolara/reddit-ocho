@@ -27,12 +27,6 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
   return (
     <div className={styles.comment}>
       <div className={styles.commentVotes}>
-        <Votes
-          score={updatedScore}
-          onVote={handleVoteButtonClick}
-          voted={voted}
-          showScore={false}
-        />
         <div className={styles.threadlineWrapper}>
           <div className={styles.threadline} />
         </div>
@@ -41,7 +35,15 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
         <span className={styles.author}>u/{author}</span>
         <span className={styles.points}> · {updatedScore} points</span>
         <p className={styles.body}>{body}</p>
-        <AddReply setReplies={setReplies} />
+        <div className={styles.commentActions}>
+          <Votes
+            score={updatedScore}
+            onVote={handleVoteButtonClick}
+            voted={voted}
+            horizontal={true}
+          />
+          <AddReply setReplies={setReplies} />
+        </div>
         <CommentsList comments={replies} />
       </div>
     </div>

@@ -41,7 +41,7 @@ const AddReply: React.FC<AddReplyProps> = ({ setReplies }) => {
       setReplies((prevReplies) => [newComment, ...prevReplies]);
       closeCommentBox();
     },
-    [setReplies]
+    [closeCommentBox, setReplies]
   );
 
   if (expanded) {
