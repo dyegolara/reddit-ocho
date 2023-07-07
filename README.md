@@ -1,34 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Reddit Clone for Ocho
 
-## Getting Started
+This project is a clone of Reddit, built with the aim of demonstrating the ability to create a high-quality, performant web application with a focus on simplicity, usability and accessibility. 
 
-First, run the development server:
+## Technology Stack
+
+This application is built with Next.js version 13, leveraging its App Router mode, which enables the use of React Server Components.
+
+One of the features is link prefetching. When a user hovers over a link, the destination page is prefetched, creating a smooth, SPA-like navigation experience. At the same time, we maintain a lightweight download footprint due to the SSR of Next.js.
+
+The project embraces a minimalist philosophy regarding dependencies, selecting only those that are essential.
+
+**Just an icons package and a pure CSS color system.**
+
+Styling was implemented using CSS Modules, chosen specifically for compatibility with React Server Components. Traditional styling libraries were not used because they require client-side rendering. 
+Tailwind would also be a great option, but this is a tech test and I wanted to demonstrate my ability to write CSS from scratch.
+
+No state management libraries were used either. For the needs of this application, React's local state with useState is sufficient.
+
+## Enhancements I Would Add with More Time:
+
+- More tests
+- Skeleton components instead of the page loader
+- Normalizing functions to consume API responses
+- The ability to refresh the page and keep changes of comments and votes in localStorage
+
+
+## How to Use This Project
+
+Here are the steps to get this project running on your local machine:
+
+1. Clone the repository to your local machine.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/dyegolara/reddit-ocho
+```
+
+2. Navigate into the project directory.
+
+```bash
+cd reddit-ocho
+```
+
+3. Install the dependencies using `pnpm`.
+
+```bash
+pnpm i
+```
+
+4. Run the development server.
+
+```bash
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can now open [http://localhost:3000](http://localhost:3000) in your browser to see the project live.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deployment of the project was carried out on [Vercel](https://vercel.com).
