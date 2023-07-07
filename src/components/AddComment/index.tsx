@@ -16,7 +16,7 @@ const AddComment: React.FC<AddCommentProps> = ({
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const comment = event.currentTarget.comment.value;
-    onSubmit?.(comment);
+    if (comment) onSubmit?.(comment);
   };
 
   return (

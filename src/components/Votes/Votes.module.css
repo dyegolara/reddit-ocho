@@ -1,6 +1,6 @@
 .votes {
   flex-direction: row;
-  padding: 0 0.25rem;
+  padding: 0 0.5rem;
 
   font-weight: bold;
   display: flex;
