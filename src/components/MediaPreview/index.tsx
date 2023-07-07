@@ -5,8 +5,16 @@ interface MediaPreviewProps {
   url: string;
   isVideo: boolean;
   postHint: string;
-  media: any; // Actualiza el tipo de "media" según la estructura de tus datos
-  preview: any; // Actualiza el tipo de "preview" según la estructura de tus datos
+  media: {
+    reddit_video: {
+      fallback_url: string;
+    };
+  };
+  preview: {
+    reddit_video_preview: {
+      fallback_url: string;
+    };
+  };
 }
 
 const MediaPreview: React.FC<MediaPreviewProps> = ({

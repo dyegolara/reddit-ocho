@@ -7,24 +7,12 @@ import styles from "./Post.module.css";
 import Link from "next/link";
 import cn from "classnames";
 import { useVotes } from "@/components/Votes/useVotes";
+import { PostType } from "@/types";
 
-type PostProps = {
-  post: {
-    subreddit: string;
-    author: string;
-    title: string;
-    url: string;
-    score: number;
-    media: string;
-    thumbnail: string;
-    preview: string;
-    permalink: string;
-    is_video: boolean;
-    is_self: boolean;
-    post_hint: string;
-  };
+interface PostProps {
+  post: PostType;
   clickable: boolean;
-};
+}
 
 const Post: React.FC<PostProps> = ({ post, clickable }) => {
   const {
