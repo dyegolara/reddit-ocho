@@ -4,7 +4,7 @@ import styles from "./AddComment.module.css";
 
 type AddCommentProps = {
   textareaRef?: React.RefObject<HTMLTextAreaElement>;
-  onSubmit?: (comment: string) => void;
+  onSubmit: (comment: string) => void;
   cancel?: () => void;
 };
 

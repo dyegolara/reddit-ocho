@@ -1,10 +1,13 @@
 import styles from "./AddReply.module.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
 import AddComment from "@/components/AddComment";
+import { CommentType } from "@/types";
 
 interface AddReplyProps {
-  setReplies: (f: (prevReplies: Array<{}>) => Array<{}>) => void;
+  setReplies: (
+    f: (prevReplies: { data: CommentType }[]) => { data: CommentType }[]
+  ) => void;
 }
 
 const AddReply: React.FC<AddReplyProps> = ({ setReplies }) => {
@@ -20,23 +23,26 @@ const AddReply: React.FC<AddReplyProps> = ({ setReplies }) => {
     }, 0);
   };
 
-  const closeCommentBox = () => {
+  const closeCommentBox = useCallback(() => {
     setExpanded(false);
-  };
+  }, []);
 
-  const handleCommentSubmit = (comment: string) => {
-    const newComment = {
-      data: {
-        id: uuidv4(),
-        score: 0,
-        author: "You",
-        body: comment,
-        replies: { data: { children: [] } },
-      },
-    };
-    setReplies((prevReplies) => [newComment, ...prevReplies]);
-    closeCommentBox();
-  };
+  const handleCommentSubmit = useCallback(
+    (comment: string) => {
+      const newComment = {
+        data: {
+          id: uuidv4(),
+          score: 0,
+          author: "You",
+          body: comment,
+          replies: { data: { children: [] } },
+        } as CommentType,
+      };
+      setReplies((prevReplies) => [newComment, ...prevReplies]);
+      closeCommentBox();
+    },
+    [setReplies]
+  );
 
   if (expanded) {
     return (

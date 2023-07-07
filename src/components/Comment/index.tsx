@@ -5,24 +5,15 @@ import Votes from "@/components/Votes";
 import CommentsList from "@/components/CommentsList";
 import AddReply from "@/components/AddReply";
 import { UP, DOWN } from "@/const";
+import { CommentType } from "@/types";
 
 interface CommentProps {
-  comment: {
-    score: number;
-    author: string;
-    body: string;
-    id: string;
-    replies?: {
-      data: {
-        children: Array<{}>;
-      };
-    };
-  };
+  comment: CommentType;
 }
 
 const Comment: React.FC<CommentProps> = ({ comment }) => {
   const [voted, setVoted] = useState("");
-  const [replies, setReplies] = useState<Array<{}>>([]);
+  const [replies, setReplies] = useState<{ data: CommentType }[]>([]);
   const { score, author, body, id } = comment;
 
   const handleVoteButtonClick = (
@@ -39,7 +30,9 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
 
   useEffect(() => {
     if (comment.replies) {
-      setReplies(comment.replies.data.children);
+      setReplies(
+        comment.replies.data.children as unknown as { data: CommentType }[]
+      );
     }
   }, [comment.replies, id]);
 
