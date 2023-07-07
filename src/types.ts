@@ -1,5 +1,6 @@
 export type CommentType = {
   id: string;
+  kind: "t1" | "more";
   score: number;
   author: string;
   body: string;

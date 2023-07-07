@@ -19,7 +19,9 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
   useEffect(() => {
     if (comment.replies) {
       setReplies(
-        comment.replies.data.children as unknown as { data: CommentType }[]
+        comment.replies.data.children.filter(
+          (reply) => reply.kind === "t1"
+        ) as unknown as { data: CommentType }[]
       );
     }
   }, [comment.replies, id]);
