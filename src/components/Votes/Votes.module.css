@@ -37,11 +37,11 @@
 }
 
 .downvote:hover {
-  color: var(--blue-11);
+  color: var(--indigo-11);
 }
 
 .downvote.voted {
-  color: var(--blue-9);
+  color: var(--indigo-9);
 }
 
 .score {
@@ -54,5 +54,5 @@
 }
 
 .score.down {
-  color: var(--blue-9);
+  color: var(--indigo-9);
 }
