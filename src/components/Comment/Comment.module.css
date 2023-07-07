@@ -10,7 +10,7 @@
 .threadlineWrapper {
   display: flex;
   height: 100%;
-  padding: 0 1rem;
+  padding: 0 0.5rem;
   width: 2px;
   align-self: center;
   cursor: pointer;
