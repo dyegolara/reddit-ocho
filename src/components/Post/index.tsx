@@ -59,7 +59,7 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
             <span className={styles.author}>u/{author}</span>
           </div>
           <h4 className={styles.title}>{title}</h4>
-          {isSelf && <span className={styles.self}>{post.selftext}</span>}
+          {isSelf && <p className={styles.self}>{post.selftext}</p>}
           {isGallery && <Gallery images={post.gallery_data.items} />}
           {isLink && <LinkPreview url={url} thumbnail={thumbnail} />}
           {hasMediaPreview && (

@@ -79,6 +79,14 @@
   color: var(--indigo-11);
 }
 
+.self {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: break-spaces;
+  overflow-wrap: anywhere;
+  font-size: 0.75rem;
+}
+
 @media (min-width: 640px) {
   .link {
     grid-template-columns: 4rem 1fr;
