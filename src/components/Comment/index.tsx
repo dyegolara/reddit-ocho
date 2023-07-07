@@ -1,32 +1,20 @@
 "use client";
 import styles from "./Comment.module.css";
-import React, { useState, useEffect, ReactElement } from "react";
+import React, { useState, useEffect } from "react";
 import Votes from "@/components/Votes";
 import CommentsList from "@/components/CommentsList";
 import AddReply from "@/components/AddReply";
-import { UP, DOWN } from "@/const";
 import { CommentType } from "@/types";
+import { useVotes } from "@/components/Votes/useVotes";
 
 interface CommentProps {
   comment: CommentType;
 }
 
 const Comment: React.FC<CommentProps> = ({ comment }) => {
-  const [voted, setVoted] = useState("");
   const [replies, setReplies] = useState<{ data: CommentType }[]>([]);
   const { score, author, body, id } = comment;
-
-  const handleVoteButtonClick = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    event.stopPropagation();
-    const { name } = event.currentTarget;
-    if (voted === name) {
-      setVoted("");
-    } else {
-      setVoted(name);
-    }
-  };
+  const { voted, handleVoteButtonClick, updatedScore } = useVotes(score);
 
   useEffect(() => {
     if (comment.replies) {
@@ -35,10 +23,6 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
       );
     }
   }, [comment.replies, id]);
-
-  let updatedScore = score;
-  if (voted === UP) updatedScore = score + 1;
-  if (voted === DOWN) updatedScore = score - 1;
 
   return (
     <div className={styles.comment}>

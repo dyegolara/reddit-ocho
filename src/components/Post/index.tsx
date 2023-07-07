@@ -1,13 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import Votes from "@/components/Votes";
 import LinkPreview from "@/components/LinkPreview";
 import MediaPreview from "@/components/MediaPreview";
-import { UP, DOWN } from "@/const";
 import styles from "./Post.module.css";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import cn from "classnames";
+import { useVotes } from "@/components/Votes/useVotes";
 
 type PostProps = {
   post: {
@@ -28,8 +27,6 @@ type PostProps = {
 };
 
 const Post: React.FC<PostProps> = ({ post, clickable }) => {
-  const [voted, setVoted] = useState("");
-  const router = useRouter();
   const {
     subreddit,
     author,
@@ -44,25 +41,10 @@ const Post: React.FC<PostProps> = ({ post, clickable }) => {
     is_self: isSelf,
     post_hint: postHint,
   } = post;
+  const { voted, handleVoteButtonClick, updatedScore } = useVotes(score);
   const isVideo = saysIsVideo || postHint?.includes("video");
   const isLink = postHint === "link";
   const hasMediaPreview = !isSelf && !isLink;
-
-  const handleVoteButtonClick = (
-    event: React.MouseEvent<HTMLButtonElement>
-  ) => {
-    event.preventDefault();
-    const { name } = event.currentTarget;
-    if (voted === name) {
-      setVoted("");
-    } else {
-      setVoted(name);
-    }
-  };
-
-  let updatedScore = score;
-  if (voted === UP) updatedScore = score + 1;
-  if (voted === DOWN) updatedScore = score - 1;
 
   return (
     <li className={cn(styles.post, { [styles.clickablePost]: clickable })}>

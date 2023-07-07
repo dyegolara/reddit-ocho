@@ -15,8 +15,8 @@ export default async function Detail({
   const [rawPost, rawComments] = await getData(
     `https://www.reddit.com/r/${permalink.join("/")}.json`
   );
-  const [post] = rawPost.data.children;
-  const comments = rawComments.data.children;
+  const [post] = rawPost?.data?.children;
+  const comments = rawComments?.data?.children || [];
   return (
     <div className={styles.detail}>
       <Container>

@@ -1,5 +1,5 @@
 import React from "react";
-import { UP, DOWN, HUMAN_READABLE_UNITS } from "@/const";
+import { DOWN, HUMAN_READABLE_UNITS, UP } from "@/const";
 import styles from "./Votes.module.css";
 import cn from "classnames";
 
