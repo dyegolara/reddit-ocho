@@ -1,5 +1,5 @@
 import { renderHook, act } from "@testing-library/react-hooks";
-import { useVotes } from "./useVotes";
+import { useVotes } from "@/components/Votes/useVotes";
 import { UP, DOWN } from "@/const";
 
 test("checks the initial state of voted", () => {

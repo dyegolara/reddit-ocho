@@ -22,13 +22,13 @@ const ImageCarousel = ({
   };
 
   return (
-    <div className={styles.gallery}>
+    <div data-testid={"gallery"} className={styles.gallery}>
       <button onClick={prevImage} className={styles.button}>
         <ChevronLeft size={32} />
       </button>
 
       <img
-        src={`https://i.redd.it/${images[currentImageIndex].media_id}.jpg`}
+        src={`https://i.redd.it/${images[currentImageIndex]?.media_id}.jpg`}
         alt="Imagen de carrusel"
         className={styles.img}
       />

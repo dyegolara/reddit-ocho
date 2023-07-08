@@ -1,5 +1,5 @@
 import { renderHook, act } from "@testing-library/react-hooks";
-import useColorMode, { LIGHT, DARK } from "./useColorMode";
+import useColorMode, { LIGHT, DARK } from "@/app/useColorMode";
 
 describe("useColorMode", () => {
   let matchMediaMock;
