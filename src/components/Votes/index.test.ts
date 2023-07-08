@@ -1,15 +1,14 @@
 import { renderHook, act } from "@testing-library/react-hooks";
 import { useVotes } from "./useVotes";
 import { UP, DOWN } from "@/const";
-import { jest } from "@jest/globals";
 
-test("comprueba el estado inicial de voted", () => {
+test("checks the initial state of voted", () => {
   const { result } = renderHook(() => useVotes(0));
 
   expect(result.current.voted).toBe("");
 });
 
-test("maneja la votación y desvotación", () => {
+test("handles voting and unvoting", () => {
   const { result } = renderHook(() => useVotes(0));
   const eventMockUp = {
     preventDefault: jest.fn(),
@@ -36,7 +35,7 @@ test("maneja la votación y desvotación", () => {
   expect(result.current.voted).toBe(DOWN);
 });
 
-test("comprueba la puntuación actualizada", () => {
+test("checks the updated score", () => {
   const { result } = renderHook(() => useVotes(0));
   const eventMockUp = {
     preventDefault: jest.fn(),
@@ -58,7 +57,7 @@ test("comprueba la puntuación actualizada", () => {
   expect(result.current.updatedScore).toBe(-1);
 });
 
-test("prevenir acción predeterminada es llamada", () => {
+test("preventDefault is called", () => {
   const { result } = renderHook(() => useVotes(0));
   const eventMock = { preventDefault: jest.fn(), currentTarget: { name: UP } };
 
