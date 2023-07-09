@@ -18,7 +18,7 @@ const useColorMode = (): ColorMode => {
     mediaQuery.addEventListener("change", changeHandler);
 
     return () => mediaQuery.removeEventListener("change", changeHandler);
-  }, []); // Empty array ensures effect is only run on mount and unmount
+  }, []);
 
   return systemColorMode;
 };

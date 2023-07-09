@@ -1,8 +1,10 @@
-import React from "react";
-import { DOWN, HUMAN_READABLE_UNITS, UP } from "@/const";
-import styles from "./Votes.module.css";
 import cn from "classnames";
 import { ArrowBigDown, ArrowBigUp } from "lucide-react";
+import React from "react";
+
+import { DOWN, HUMAN_READABLE_UNITS, UP } from "@/const";
+
+import styles from "./Votes.module.css";
 
 type VotesProps = {
   score: number;

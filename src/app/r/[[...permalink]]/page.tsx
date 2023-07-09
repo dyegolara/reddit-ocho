@@ -1,9 +1,10 @@
-import styles from "./page.module.css";
+import PostComments from "@/app/r/[[...permalink]]/PostComments";
 import { Container } from "@/components/Container";
 import Post from "@/components/Post";
-import { getData } from "@/utils";
-import PostComments from "@/app/r/[[...permalink]]/PostComments";
 import { CommentType, PostType } from "@/types";
+import { getData } from "@/utils";
+
+import styles from "./page.module.css";
 
 export default async function Detail({
   params: { permalink },

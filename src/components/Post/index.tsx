@@ -1,14 +1,16 @@
 "use client";
+import cn from "classnames";
+import Link from "next/link";
 import React from "react";
-import Votes from "@/components/Votes";
+
+import Gallery from "@/components/Gallery";
 import LinkPreview from "@/components/LinkPreview";
 import MediaPreview from "@/components/MediaPreview";
-import styles from "./Post.module.css";
-import Link from "next/link";
-import cn from "classnames";
+import Votes from "@/components/Votes";
 import { useVotes } from "@/components/Votes/useVotes";
 import { PostType } from "@/types";
-import Gallery from "@/components/Gallery";
+
+import styles from "./Post.module.css";
 
 interface PostProps {
   post: PostType;

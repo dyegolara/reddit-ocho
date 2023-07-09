@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import { DOWN, UP } from "@/const";
 
 export const useVotes = (score: number) => {

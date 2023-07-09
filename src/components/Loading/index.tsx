@@ -2,10 +2,15 @@ import styles from "./Loading.module.css";
 
 const Loading: React.FC = () => {
   return (
-    <div className={styles.loading}>
-      <div className={styles.loaderDot}></div>
-      <div className={styles.loaderDot}></div>
-      <div className={styles.loaderDot}></div>
+    <div
+      className={styles.loading}
+      aria-label="Loading"
+      aria-live="polite"
+      role="status"
+    >
+      <div className={styles.loaderDot} />
+      <div className={styles.loaderDot} />
+      <div className={styles.loaderDot} />
     </div>
   );
 };

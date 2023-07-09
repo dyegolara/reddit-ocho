@@ -1,12 +1,14 @@
 "use client";
-import styles from "./Comment.module.css";
-import React, { useState, useEffect } from "react";
-import Votes from "@/components/Votes";
-import CommentsList from "@/components/CommentsList";
-import AddReply from "@/components/AddReply";
-import { CommentType } from "@/types";
-import { useVotes } from "@/components/Votes/useVotes";
 import cn from "classnames";
+import React, { useEffect, useState } from "react";
+
+import AddReply from "@/components/AddReply";
+import CommentsList from "@/components/CommentsList";
+import Votes from "@/components/Votes";
+import { useVotes } from "@/components/Votes/useVotes";
+import { CommentType } from "@/types";
+
+import styles from "./Comment.module.css";
 
 interface CommentProps {
   comment: CommentType;
@@ -28,12 +30,26 @@ const Comment: React.FC<CommentProps> = ({ comment }) => {
     }
   }, [comment.replies, id]);
 
+  // this is needed for a11y
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    // Enter or Space pressed
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setCompact(!compact);
+    }
+  };
+
   return (
     <div className={styles.comment}>
       <div className={styles.commentVotes}>
         <div
+          role={"button"}
+          tabIndex={0}
           className={styles.threadlineWrapper}
           onClick={() => setCompact(!compact)}
+          onKeyDown={handleKeyDown}
+          aria-pressed={compact}
+          aria-label={compact ? "Expand comment" : "Collapse comment"}
         >
           <div className={styles.threadline} />
         </div>

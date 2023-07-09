@@ -1,8 +1,10 @@
-import styles from "./AddReply.module.css";
-import React, { useState, useRef, useCallback } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+
 import AddComment from "@/components/AddComment";
 import { CommentType } from "@/types";
+
+import styles from "./AddReply.module.css";
 
 interface AddReplyProps {
   setReplies: (

@@ -1,6 +1,7 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import React, { useState } from "react";
+
 import styles from "./Gallery.module.css";
-import { ChevronRight, ChevronLeft } from "lucide-react";
 
 const ImageCarousel = ({
   images,

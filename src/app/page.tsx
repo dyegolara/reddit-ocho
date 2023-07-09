@@ -1,8 +1,9 @@
-import styles from "./page.module.css";
 import { Container } from "@/components/Container";
-import { getData } from "@/utils";
 import Post from "@/components/Post";
 import { PostType } from "@/types";
+import { getData } from "@/utils";
+
+import styles from "./page.module.css";
 
 export const revalidate = 0;
 

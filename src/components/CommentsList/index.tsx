@@ -1,7 +1,9 @@
 import React from "react";
-import styles from "./CommentsList.module.css";
+
 import Comment from "@/components/Comment";
 import { CommentType } from "@/types";
+
+import styles from "./CommentsList.module.css";
 
 const CommentsList = ({ comments }: { comments: { data: CommentType }[] }) => {
   return (

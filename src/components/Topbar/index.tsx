@@ -1,10 +1,12 @@
 "use client";
+import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
-import styles from "./Topbar.module.css";
 import { usePathname } from "next/navigation";
-import useColorMode, { ColorMode, DARK, LIGHT } from "@/app/useColorMode";
+
 import { useTheme } from "@/app/ColorModeProvider";
-import { Sun, Moon } from "lucide-react";
+import { ColorMode, DARK, LIGHT } from "@/app/useColorMode";
+
+import styles from "./Topbar.module.css";
 
 const Topbar = () => {
   const pathname = usePathname();

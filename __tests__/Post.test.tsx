@@ -16,7 +16,6 @@ const postMock = {
   is_self: false,
   is_gallery: false,
   post_hint: "",
-  // Add other required fields...
 };
 
 test("renders subreddit, author, title and score", () => {
@@ -47,6 +46,5 @@ test("renders Gallery when post is a gallery", () => {
     />
   );
 
-  // Replace with appropriate test depending on how your Gallery component behaves
   expect(screen.getByTestId("gallery")).toBeInTheDocument();
 });

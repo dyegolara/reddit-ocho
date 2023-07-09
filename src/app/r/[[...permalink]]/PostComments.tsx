@@ -1,9 +1,10 @@
 "use client";
+import { useCallback, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+
 import AddComment from "@/components/AddComment";
 import CommentsList from "@/components/CommentsList";
 import { CommentType } from "@/types";
-import { useCallback, useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 export default function PostComments({
   comments,
