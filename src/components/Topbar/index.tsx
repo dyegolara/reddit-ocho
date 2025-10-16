@@ -25,14 +25,14 @@ const Topbar = () => {
               back to /all
             </Link>
           )}
-          {/* <button
+          <button
             className={styles.button}
             onClick={() =>
               setColorMode((mode: ColorMode) => (mode === LIGHT ? DARK : LIGHT))
             }
           >
             {colorMode === LIGHT ? <Moon size={24} /> : <Sun size={24} />}
-          </button> */}
+          </button>
         </div>
       </nav>
     </header>

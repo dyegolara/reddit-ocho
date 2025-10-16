@@ -28,7 +28,7 @@ export default function ColorModeProvider({
 
   return (
     <ThemeContext.Provider value={{ colorMode, setColorMode, systemColorMode }}>
-      {children}
+      <body className={`${colorMode}-theme`}>{children}</body>
     </ThemeContext.Provider>
   );
 }
