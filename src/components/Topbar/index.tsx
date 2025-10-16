@@ -2,11 +2,14 @@
 import { Moon, Sun } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 import { useTheme } from "@/app/ColorModeProvider";
 import { ColorMode, DARK, LIGHT } from "@/app/useColorMode";
 
 import styles from "./Topbar.module.css";
+
+import logo from "./logo.webp";
 
 const Topbar = () => {
   const pathname = usePathname();
@@ -16,11 +19,7 @@ const Topbar = () => {
     <header className={styles.topbar}>
       <nav className={styles.nav}>
         <Link href="/" className={styles.link}>
-          <img
-            src="https://i.imgur.com/sdO8tAw.png"
-            alt="Reddit's logo"
-            className={styles.logo}
-          />
+          <Image src={logo} alt="Reddit's logo" width={100} height={30} />
         </Link>
 
         <div className={styles.rightSide}>
