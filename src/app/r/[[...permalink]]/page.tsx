@@ -14,7 +14,7 @@ export default async function Detail({
   const [rawPost, rawComments]: [
     { data: { children: { data: PostType }[] } },
     { data: { children: { data: CommentType }[] } }
-  ] = await getData(`https://www.reddit.com/r/${permalink.join("/")}.json`);
+  ] = await getData(`https://old.reddit.com/r/${permalink.join("/")}.json`);
 
   const [post] = rawPost?.data?.children;
   const comments = rawComments?.data?.children || [];

@@ -7,7 +7,7 @@ import styles from "./page.module.css";
 
 export const revalidate = 0;
 
-const ALL_POSTS_URL = "https://www.reddit.com/r/all.json";
+const ALL_POSTS_URL = "https://old.reddit.com/r/all.json";
 
 export default async function Home() {
   const response = await getData(ALL_POSTS_URL);
