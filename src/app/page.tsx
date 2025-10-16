@@ -7,14 +7,23 @@ import styles from "./page.module.css";
 
 export const revalidate = 0;
 
-const ALL_POSTS_URL = "https://www.reddit.com/r/all.json";
+const ALL_POSTS_URL = "https://oauth.reddit.com/r/all.json";
 
 export default async function Home() {
+  const response = await getData(ALL_POSTS_URL);
+
+  if (!response) {
+    return (
+      <div className={styles.all}>
+        <Container>
+          <span>Error fetching data</span>
+        </Container>
+      </div>
+    );
+  }
   const {
     data: { children: posts },
-  }: { data: { children: { data: PostType }[] } } = await getData(
-    ALL_POSTS_URL
-  );
+  } = response;
 
   return (
     <div className={styles.all}>
