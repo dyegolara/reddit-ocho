@@ -1,9 +1,6 @@
 {
   "extends": ["next/core-web-vitals", "prettier", "plugin:jsx-a11y/strict"],
-  "plugins": ["jest", "jsx-a11y", "simple-import-sort"],
-  "env": {
-    "jest/globals": true
-  },
+  "plugins": ["jsx-a11y", "simple-import-sort"],
   "rules": {
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error"
