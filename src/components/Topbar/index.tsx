@@ -1,9 +1,11 @@
 "use client";
+import { Moon, Sun } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { useTheme } from "@/app/ColorModeProvider";
+import { ColorMode, DARK, LIGHT } from "@/app/useColorMode";
 
 import logo from "./logo.webp";
 import styles from "./Topbar.module.css";
