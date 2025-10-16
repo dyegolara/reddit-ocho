@@ -20,8 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <ColorModeProvider>
-        <Topbar />
-        {children}
+        <body className="dark-theme">
+          <Topbar />
+          {children}
+        </body>
       </ColorModeProvider>
     </html>
   );
