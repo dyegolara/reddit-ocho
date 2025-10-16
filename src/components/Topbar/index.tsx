@@ -1,15 +1,12 @@
 "use client";
-import { Moon, Sun } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 import { useTheme } from "@/app/ColorModeProvider";
-import { ColorMode, DARK, LIGHT } from "@/app/useColorMode";
-
-import styles from "./Topbar.module.css";
 
 import logo from "./logo.webp";
+import styles from "./Topbar.module.css";
 
 const Topbar = () => {
   const pathname = usePathname();
